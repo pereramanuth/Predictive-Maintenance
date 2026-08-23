@@ -37,11 +37,11 @@ so PR-AUC and the Failure-class recall/precision matter far more than raw accura
 
 ## 🔄 Pipeline
 
-1. 🔍 **`01_eda.ipynb`** — exploratory analysis, class imbalance, feature distributions
-2. 🧹 **`02_prepare.ipynb`** — cleaning, label encoding, `StandardScaler`, train/test split
-3. 🤖 **`03_model.ipynb`** — baseline model comparison (Logistic Regression, Random Forest, Gradient Boosting)
-4. 🎛️ **`04_model_selection.ipynb`** — randomized hyperparameter search, CV-based threshold tuning, final model refinement and export to `model_bundle.pkl`
-5. 🚀 **Deployment** — FastAPI service (`app.py`, `inference.py`) + static dashboard frontend
+1. 🔍 **`01_eda.ipynb`** : exploratory analysis, class imbalance, feature distributions
+2. 🧹 **`02_prepare.ipynb`** : cleaning, label encoding, `StandardScaler`, train/test split
+3. 🤖 **`03_model.ipynb`** : baseline model comparison (Logistic Regression, Random Forest, Gradient Boosting)
+4. 🎛️ **`04_model_selection.ipynb`** : randomized hyperparameter search, CV-based threshold tuning, final model refinement and export to `model_bundle.pkl`
+5. 🚀 **Deployment** : FastAPI service (`app.py`, `inference.py`) + static dashboard frontend
 
 ---
 
@@ -53,7 +53,7 @@ Sensor reading → FastAPI /predict → inference.py (scaler + label encoder, sa
 ```
 
 `inference.py` replicates the Phase 2 preprocessing exactly (same encoder, same scaler, same
-column order) so predictions match the training notebooks bit-for-bit — a common silent
+column order) so predictions match the training notebooks bit-for-bit , a common silent
 failure mode in ML deployment is preprocessing drift between training and serving.
 
 ---
