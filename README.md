@@ -1,4 +1,4 @@
-# 🛠️ Predictive Maintenance — Early-Warning Failure Classifier
+# 🛠️ Predictive Maintenance Early-Warning Failure Classifier
 
 An end-to-end machine learning pipeline that predicts machine failure risk from live sensor
 readings, deployed as a FastAPI service with a live dashboard front end.
