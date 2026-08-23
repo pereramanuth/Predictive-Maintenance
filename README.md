@@ -29,7 +29,7 @@ Built on the [AI4I 2020 Predictive Maintenance Dataset (UCI)](https://archive.ic
 | Failure-class recall | 0.74 |
 | Overall accuracy | 0.98 |
 
-⚠️ Threshold (0.885) was tuned on **cross-validated PR curves** — not the test set — to avoid
+⚠️ Threshold (0.885) was tuned on **cross-validated PR curves** , not the test set  to avoid
 leakage into the reported metrics. The dataset is heavily imbalanced (~3.4% failure rate),
 so PR-AUC and the Failure-class recall/precision matter far more than raw accuracy here.
 
@@ -43,6 +43,16 @@ so PR-AUC and the Failure-class recall/precision matter far more than raw accura
 4. 🎛️ **`04_model_selection.ipynb`** : randomized hyperparameter search, CV-based threshold tuning, final model refinement and export to `model_bundle.pkl`
 5. 🚀 **Deployment** : FastAPI service (`app.py`, `inference.py`) + static dashboard frontend
 
+---
+## ✅ Sanity check
+
+`sanity_check.py` runs a few known rows from the raw CSV through the full inference
+pipeline (`inference.predict()`  , the same path `app.py` uses) and compares predicted
+vs actual labels, catching preprocessing bugs the model score alone wouldn't show.
+
+```bash
+python sanity_check.py
+```
 ---
 
 ## 🏗️ Architecture
