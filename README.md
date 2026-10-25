@@ -68,14 +68,6 @@ failure mode in ML deployment is preprocessing drift between training and servin
 
 ---
 
-## ▶️ Running locally
-
-```bash
-pip install -r requirements.txt
-uvicorn app:app --reload --port 8000
-# Docs: http://127.0.0.1:8000/docs
-```
-
 ---
 
 ## 🧰 Tech stack
